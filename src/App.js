@@ -1,12 +1,19 @@
 import React from "react";
+import styled from "styled-components";
 import GlobalStyle from "./GlobalStyles";
+import { ThemeProvider } from "styled-components";
+import theme from "./Theme";
+import Router from "./Router";
 
-function App() {
-  return (
-    <div className="App">
-      <GlobalStyle />
-    </div>
-  );
-}
+const App = styled.div`
+  padding: 6pt;
+`;
 
-export default App;
+export default () => (
+  <App>
+    <GlobalStyle />
+    <ThemeProvider theme={theme}>
+      <Router />
+    </ThemeProvider>
+  </App>
+);
