@@ -5,7 +5,7 @@ import { Link } from "react-router-dom";
 const Container = styled.section`
   padding-left: 6pt;
   background-color: ${(props) => props.theme.main_white};
-  margin-bottom: 5pt;
+  margin: 5pt 0;
 `;
 
 const Header = styled.header`
