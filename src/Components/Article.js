@@ -9,10 +9,6 @@ const Article = styled.article`
   background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
     url(${(props) => props.path});
   background-size: cover;
-  background-position: center center;
-  position: absolute;
-  top: 22pt;
-  left: 0;
   display: flex;
   flex-direction: column;
   justify-content: space-evenly;
