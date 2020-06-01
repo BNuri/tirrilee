@@ -14,6 +14,7 @@ import mypage_select from "../../assets/images/nav/mypage_select.png";
 const Nav = styled.nav`
   height: 28pt;
   width: 100%;
+  padding: 2px;
   position: fixed;
   bottom: 0;
   left: 0;
@@ -30,6 +31,7 @@ const UList = styled.ul`
 const List = styled.li`
   color: ${(props) =>
     props.now ? props.theme.main_blue : props.theme.text_lightgrey};
+  font-weight: ${(props) => (props.now ? "700" : "400")};
 `;
 
 const StyledLink = styled(Link)`
@@ -45,6 +47,7 @@ const Img = styled.img`
 
 const Span = styled.span`
   font-size: 5pt;
+  line-height: 6pt;
 `;
 
 export default withRouter(({ location: { pathname } }) => (
