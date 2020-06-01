@@ -1,7 +1,7 @@
 import React from "react";
 import styled from "styled-components";
 import { withRouter } from "react-router-dom";
-import back_button_grey from "../../assets/images/icons/back_button_gray.png";
+import back_button_grey from "../../assets/images/icons/back_button_grey.png";
 
 const Header = styled.header`
   height: 22pt;
