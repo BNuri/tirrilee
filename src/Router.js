@@ -5,13 +5,13 @@ import {
   Route,
   Redirect,
 } from "react-router-dom";
-import Login from "./Components/Screens/Login";
-import Join from "./Components/Screens/Join";
-import Main from "./Components/Screens/Main";
-import Search from "./Components/Screens/Search";
-import Upload from "./Components/Screens/Upload";
-import Community from "./Components/Screens/Community";
-import MyPage from "./Components/Screens/MyPage";
+import Login from "./Screens/Login";
+import Join from "./Screens/Join";
+import Main from "./Screens/Main";
+import Search from "./Screens/Search";
+import Upload from "./Screens/Upload";
+import Community from "./Screens/Community";
+import MyPage from "./Screens/MyPage";
 
 export default () => (
   <Router>

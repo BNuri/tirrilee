@@ -5,9 +5,7 @@ import { ThemeProvider } from "styled-components";
 import theme from "./Theme";
 import Router from "./Router";
 
-const App = styled.div`
-  padding: 6pt;
-`;
+const App = styled.div``;
 
 export default () => (
   <App>

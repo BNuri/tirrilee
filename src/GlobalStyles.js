@@ -20,6 +20,12 @@ const GlobalStyle = createGlobalStyle`
             outline: none; 
         } 
     }
+    main {
+        padding: 0 6pt;
+        &.no_padding {
+            padding: 0;
+        }
+    }
 `;
 
 export default GlobalStyle;
