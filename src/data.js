@@ -55,7 +55,8 @@ export const user = {
   name: "이티릴",
   email: "tirrilee@gmail.com",
   description: "안녕하세요. 이티릴입니다. 소개내용이 들어갑니다.",
-  profilePath: "",
+  profilePath:
+    "https://lh3.googleusercontent.com/proxy/ezv7iA4-yUKNJ85curxAKLpepyzyHvp__aiwFwshdy7wPST_ga2i7r2Vu_lIlegjhntdjCGL4oijqMr0PTX3dGVzbX9BJEDgtVziDYIzJ5-qKoZ6-yXDMpYsZyG9kqei-AjLDwV1CmlDKp2fG0vkz94ZE9q79clQTThXEKd4KWxLpZHqy7Wgdk2oRQi_5suD",
   sellCnt: 100,
   buyCnt: 200,
   season: "봄",
@@ -76,3 +77,48 @@ export const article2 = {
   link: "/main",
   buttonTitle: "보러가기",
 };
+
+export const roundButtons = [
+  {
+    title: "버튼 1",
+    imgPath:
+      "https://previews.123rf.com/images/fotomaximum/fotomaximum1707/fotomaximum170700009/81855687-colorful-fruits-rows.jpg",
+    link: "/main",
+  },
+  {
+    title: "버튼 2",
+    imgPath:
+      "https://dreamcatcherbody.files.wordpress.com/2017/02/p-colorful-fruits-4wsp2m3uw6-1.jpg",
+    link: "/main",
+  },
+  {
+    title: "버튼 3",
+    imgPath:
+      "https://i.pinimg.com/originals/76/f6/19/76f619fc2f37b9b2f0ddfbbd92df0c51.jpg",
+    link: "/main",
+  },
+  {
+    title: "버튼 4",
+    imgPath:
+      "https://i.pinimg.com/736x/77/a8/75/77a875730f410f8c585abf0ffb118626.jpg",
+    link: "/main",
+  },
+  {
+    title: "버튼 5",
+    imgPath:
+      "https://st4.depositphotos.com/14654838/21297/i/1600/depositphotos_212974798-stock-photo-lot-colorful-fruits-vegetables-background.jpg",
+    link: "/main",
+  },
+  {
+    title: "버튼 6",
+    imgPath:
+      "https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcRgq4Usjsh1TkxCp_Ozkm6_vPGLc5ZpCzVDYvTbcxC4N_VXhXUU&usqp=CAU",
+    link: "/main",
+  },
+  {
+    title: "버튼 7",
+    imgPath:
+      "https://images.pexels.com/photos/1132047/pexels-photo-1132047.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500",
+    link: "/main",
+  },
+];
