@@ -13,7 +13,7 @@ import Upload from "./Screens/Upload";
 import Community from "./Screens/Community";
 import WriteCommunity from "./Screens/WriteCommunity";
 import MyPage from "./Screens/MyPage";
-import EditMyPage from "./Screens/MyPage";
+import EditMyPage from "./Screens/EditMyPage";
 
 export default () => (
   <Router>
