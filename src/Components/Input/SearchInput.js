@@ -41,9 +41,9 @@ const Img = styled.div`
 export default () => {
   const [form, setForm] = useState({
     text: "",
-    searchIcon: true,
     season: "",
   });
+  const [searchIcon, setSearchIcon] = useState(true);
   const setText = (e) => {
     setForm({
       ...form,
@@ -51,19 +51,13 @@ export default () => {
     });
   };
   const setTextEmpty = (e) => {
-    if (!form.searchIcon) {
+    if (!searchIcon) {
       setForm({
         ...form,
         text: "",
       });
     }
     e.preventDefault();
-  };
-  const setIcon = (bool) => {
-    setForm({
-      ...form,
-      searchIcon: bool,
-    });
   };
   const setSeason = (season) => {
     setForm({
@@ -73,9 +67,9 @@ export default () => {
   };
   useEffect(() => {
     if (form.text !== "") {
-      setIcon(false);
+      setSearchIcon(false);
     } else {
-      setIcon(true);
+      setSearchIcon(true);
     }
   }, [form.text]);
   return (
@@ -88,7 +82,7 @@ export default () => {
           onChange={setText}
         />
         <Button onClick={setTextEmpty}>
-          <Img icon={form.searchIcon ? search_icon : delete_icon} />
+          <Img icon={searchIcon ? search_icon : delete_icon} />
         </Button>
       </SearchContainer>
       <Season season={form.season} setSeason={setSeason} />
