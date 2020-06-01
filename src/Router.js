@@ -11,7 +11,9 @@ import Main from "./Screens/Main";
 import Search from "./Screens/Search";
 import Upload from "./Screens/Upload";
 import Community from "./Screens/Community";
+import WriteCommunity from "./Screens/WriteCommunity";
 import MyPage from "./Screens/MyPage";
+import EditMyPage from "./Screens/MyPage";
 
 export default () => (
   <Router>
@@ -22,7 +24,9 @@ export default () => (
       <Route path="/search" exact component={Search} />
       <Route path="/upload" exact component={Upload} />
       <Route path="/community" exact component={Community} />
+      <Route path="/community/write" exact component={WriteCommunity} />
       <Route path="/mypage" exact component={MyPage} />
+      <Route path="/mypage/edit" exact component={EditMyPage} />
       <Redirect from="*" to="/" />
     </Switch>
   </Router>
