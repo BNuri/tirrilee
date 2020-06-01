@@ -59,7 +59,7 @@ const GridSContainer = styled.div`
 export default () => (
   <Container>
     <HeaderNoTitle />
-    <Main className="no_padding withHeaderNav">
+    <Main className="noPadding withHeaderNav">
       <Article {...article1} />
       <Section title="카드M_Section" moreLink="/main">
         <GridMContainer>
@@ -71,30 +71,20 @@ export default () => (
       <Section title="게시판_Section" moreLink="/main">
         <TableContainer>
           <tbody>
-            {items.map((item, i) => {
-              if (i < 3) {
-                return (
-                  <Tr key={item.id + "t"}>
-                    <Category>{item.season}</Category>
-                    <Title>{item.name}</Title>
-                  </Tr>
-                );
-              } else {
-                return "";
-              }
-            })}
+            {items.map((item) => (
+              <Tr key={item.id + "t"}>
+                <Category>{item.season}</Category>
+                <Title>{item.name}</Title>
+              </Tr>
+            ))}
           </tbody>
         </TableContainer>
       </Section>
       <Section title="카드S_Section" moreLink="/main">
         <GridSContainer>
-          {items.map((item, i) => {
-            if (i < 4) {
-              return <Card key={item.id} size={50} {...item} />;
-            } else {
-              return "";
-            }
-          })}
+          {items.map((item) => (
+            <Card key={item.id} size={50} {...item} />
+          ))}
         </GridSContainer>
       </Section>
     </Main>

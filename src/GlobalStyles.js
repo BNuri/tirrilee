@@ -22,7 +22,7 @@ const GlobalStyle = createGlobalStyle`
     }
     main {
         padding: 0 6pt;
-        &.no_padding {
+        &.noPadding {
             padding: 0;
         }
         &.withHeaderBottomButton {
