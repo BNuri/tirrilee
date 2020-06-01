@@ -38,11 +38,7 @@ const Img = styled.div`
   background-position: center center;
 `;
 
-export default () => {
-  const [form, setForm] = useState({
-    text: "",
-    season: "",
-  });
+export default ({ form, setForm }) => {
   const [searchIcon, setSearchIcon] = useState(true);
   const setText = (e) => {
     setForm({

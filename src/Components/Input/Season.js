@@ -58,11 +58,7 @@ const Img = styled.div`
   background-position: center center;
 `;
 
-export default (props) => {
-  const [season, setSeason] = useState({
-    text: "",
-  });
-
+export default ({ season, setSeason }) => {
   useEffect(() => {
     const outClick = (e) => {
       if (!e.target.matches("#seasonBtn")) {
@@ -74,7 +70,7 @@ export default (props) => {
     };
     window.addEventListener("click", outClick);
     return () => window.removeEventListener("click", outClick);
-  });
+  }, []);
 
   const toggleOptions = () => {
     const options = document.querySelector("#seasonOptions");
@@ -89,12 +85,8 @@ export default (props) => {
     }
   };
   const selectOption = (e) => {
-    const value = e.currentTarget.dataset.value;
     const text = e.currentTarget.innerText;
-    props.setSeason(value);
-    setSeason({
-      text,
-    });
+    setSeason(text);
     toggleOptions();
     toggleSelect(true);
   };
@@ -103,21 +95,13 @@ export default (props) => {
     <Season id="season">
       <Img icon={calendar} />
       <Select onClick={toggleOptions} id="seasonBtn">
-        {season.text === "" ? "계절선택" : season.text}
+        {season === "" ? "계절선택" : season}
       </Select>
       <Options id="seasonOptions">
-        <Option onClick={selectOption} data-value="spring">
-          봄
-        </Option>
-        <Option onClick={selectOption} data-value="summer">
-          여름
-        </Option>
-        <Option onClick={selectOption} data-value="fall">
-          가을
-        </Option>
-        <Option onClick={selectOption} data-value="winter">
-          겨울
-        </Option>
+        <Option onClick={selectOption}>봄</Option>
+        <Option onClick={selectOption}>여름</Option>
+        <Option onClick={selectOption}>가을</Option>
+        <Option onClick={selectOption}>겨울</Option>
       </Options>
     </Season>
   );
