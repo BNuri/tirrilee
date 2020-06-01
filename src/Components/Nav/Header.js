@@ -29,13 +29,17 @@ const Title = styled.h1`
   color: ${(props) => props.theme.main_blue};
 `;
 
-export default withRouter(({ history, title }) => (
+export default withRouter(({ history, title, onlyTitle = false }) => (
   <Header>
-    <BackButton
-      src={back_button_grey}
-      alt="뒤로가기"
-      onClick={history.goBack}
-    />
+    {onlyTitle ? (
+      ""
+    ) : (
+      <BackButton
+        src={back_button_grey}
+        alt="뒤로가기"
+        onClick={history.goBack}
+      />
+    )}
     <Title>{title}</Title>
   </Header>
 ));
