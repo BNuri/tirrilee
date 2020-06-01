@@ -18,6 +18,8 @@ const Nav = styled.nav`
   bottom: 0;
   left: 0;
   background-color: ${(props) => props.theme.main_white};
+  box-shadow: 0pt -1pt 3pt ${(props) => props.theme.border_lightgrey};
+  z-index: 10;
 `;
 
 const UList = styled.ul`
@@ -36,12 +38,9 @@ const StyledLink = styled(Link)`
   align-items: center;
 `;
 
-const Img = styled.div`
+const Img = styled.img`
   height: 16pt;
   width: 16pt;
-  background-image: url(${(props) => props.icon});
-  background-size: cover;
-  background-position: center center;
 `;
 
 const Span = styled.span`
@@ -53,30 +52,35 @@ export default withRouter(({ location: { pathname } }) => (
     <UList>
       <List now={pathname === "/main"}>
         <StyledLink to="/main">
-          <Img icon={pathname === "/main" ? home_select : home_disabled} />
+          <Img
+            src={pathname === "/main" ? home_select : home_disabled}
+            alt="홈"
+          />
           <Span>홈</Span>
         </StyledLink>
       </List>
       <List now={pathname === "/search"}>
         <StyledLink to="/search">
           <Img
-            icon={pathname === "/search" ? search_select : search_disabled}
+            src={pathname === "/search" ? search_select : search_disabled}
+            alt="검색"
           />
           <Span>검색</Span>
         </StyledLink>
       </List>
       <List>
         <StyledLink to="#">
-          <Img icon={request_disabled} />
+          <Img src={request_disabled} alt="액션기능" />
           <Span>액션기능</Span>
         </StyledLink>
       </List>
       <List now={pathname === "/community"}>
         <StyledLink to="/community">
           <Img
-            icon={
+            src={
               pathname === "/community" ? community_select : community_disabled
             }
+            alt="커뮤니티"
           />
           <Span>커뮤니티</Span>
         </StyledLink>
@@ -84,7 +88,8 @@ export default withRouter(({ location: { pathname } }) => (
       <List now={pathname === "/mypage"}>
         <StyledLink to="/mypage">
           <Img
-            icon={pathname === "/mypage" ? mypage_select : mypage_disabled}
+            src={pathname === "/mypage" ? mypage_select : mypage_disabled}
+            alt="마이페이지"
           />
           <Span>마이페이지</Span>
         </StyledLink>
