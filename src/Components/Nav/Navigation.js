@@ -88,10 +88,10 @@ export default withRouter(({ location: { pathname } }) => (
           <Span>커뮤니티</Span>
         </StyledLink>
       </List>
-      <List now={pathname === "/mypage"}>
+      <List now={pathname.includes("/mypage")}>
         <StyledLink to="/mypage">
           <Img
-            src={pathname === "/mypage" ? mypage_select : mypage_disabled}
+            src={pathname.includes("/mypage") ? mypage_select : mypage_disabled}
             alt="마이페이지"
           />
           <Span>마이페이지</Span>
