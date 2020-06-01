@@ -10,8 +10,6 @@ import Card from "../Components/Card";
 const Container = styled.div``;
 
 const Main = styled.main`
-  margin-top: 117pt;
-  margin-bottom: 35pt;
   background-color: ${(props) => props.theme.button_lightgrey};
 `;
 
@@ -61,8 +59,8 @@ const GridSContainer = styled.div`
 export default () => (
   <Container>
     <HeaderNoTitle />
-    <Article {...article1} />
-    <Main className="no_padding">
+    <Main className="no_padding withHeaderNav">
+      <Article {...article1} />
       <Section title="카드M_Section" moreLink="/main">
         <GridMContainer>
           {items.map((item) => (

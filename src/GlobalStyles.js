@@ -25,6 +25,15 @@ const GlobalStyle = createGlobalStyle`
         &.no_padding {
             padding: 0;
         }
+        &.withHeaderBottomButton {
+            margin-top: 22pt;
+            margin-bottom: 24pt;
+            height: calc(100vh - 46pt);
+        }
+        &.withHeaderNav {
+            margin-top: 25pt;
+            margin-bottom: 30pt;
+        }
     }
 `;
 

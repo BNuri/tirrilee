@@ -5,7 +5,6 @@ import Text from "../Components/Input/Text";
 import ButtonFixed from "../Components/Input/ButtonFixed";
 
 const Container = styled.main`
-  height: calc(100vh - 22pt);
   display: flex;
   flex-direction: column;
   justify-content: space-evenly;
@@ -50,7 +49,7 @@ export default () => {
   const handleSubmit = () => {};
 
   return (
-    <Container>
+    <Container className="withHeaderBottomButton">
       <Header title="회원가입" />
       <SubTitle>가입 정보를 입력해주세요:)</SubTitle>
       <InputContainer>
