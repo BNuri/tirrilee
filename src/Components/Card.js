@@ -11,6 +11,19 @@ const Card = styled.section`
   position: relative;
   border-radius: 2pt;
   background-color: ${(props) => props.theme.main_white};
+  > div:nth-child(2) {
+    height: ${(props) =>
+      props.size === 75 ? "82.5pt" : props.size === 50 ? "60pt" : "100pt"};
+  }
+  > div:nth-child(3) {
+    height: ${(props) =>
+      props.size === 75 ? "36pt" : props.size === 50 ? " 46.5pt" : "38.5pt"};
+  }
+  h3,
+  h4 {
+    font-size: ${(props) =>
+      props.size === 75 ? "8pt" : props.size === 50 ? "7pt" : "9pt"};
+  }
 `;
 
 const Like = styled.img`
@@ -23,8 +36,6 @@ const Like = styled.img`
 `;
 
 const Img = styled.div`
-  height: ${(props) =>
-    props.size === 75 ? "82.5pt" : props.size === 50 ? "60pt" : "100pt"};
   width: 100%;
   background-image: url(${(props) => props.src});
   background-size: cover;
@@ -36,10 +47,8 @@ const Img = styled.div`
 `;
 
 const Info = styled.div`
-  height: ${(props) =>
-    props.size === 75 ? "36pt" : props.size === 50 ? " 46.5pt" : "38.5pt"};
   width: 100%;
-  padding: 6pt;
+  padding: 5pt 6pt;
   position: absolute;
   left: 0;
   bottom: 0;
@@ -55,6 +64,11 @@ const InfoColumn = styled.div`
   display: flex;
   flex-direction: column;
   justify-content: ${(props) => (props.size === 50 ? "flex-start" : "center")};
+  &:first-child {
+    span {
+      line-height: ${(props) => (props.size === 50 ? 0 : "11.5pt")};
+    }
+  }
   &:nth-child(2) {
     align-items: flex-end;
     justify-content: ${(props) =>
@@ -63,8 +77,6 @@ const InfoColumn = styled.div`
 `;
 
 const Title = styled.h3`
-  font-size: ${(props) =>
-    props.size === 75 ? "8pt" : props.size === 50 ? "7pt" : "9pt"};
   line-height: 15pt;
   font-weight: 500;
 `;
@@ -85,8 +97,6 @@ const Star = styled.img`
 `;
 
 const Price = styled.h4`
-  font-size: ${(props) =>
-    props.size === 75 ? "8pt" : props.size === 50 ? "7pt" : "9pt"};
   line-height: 15pt;
   color: ${(props) => props.theme.main_blue};
   font-weight: 700;
@@ -95,10 +105,10 @@ const Price = styled.h4`
 export default ({ size, name, price, season, imgPath, rating, seller, id }) => (
   <Card size={size}>
     <Like src={heart_disabled} alt="좋아요" />
-    <Img size={size} src={imgPath} />
-    <Info size={size}>
+    <Img src={imgPath} />
+    <Info>
       <InfoColumn size={size}>
-        <Title size={size}>{name}</Title>
+        <Title>{name}</Title>
         <MoreInfo>
           <Span>{season}</Span>
           <Star src={star} />
@@ -107,7 +117,7 @@ export default ({ size, name, price, season, imgPath, rating, seller, id }) => (
       </InfoColumn>
       <InfoColumn size={size}>
         <Span>{seller}</Span>
-        <Price size={size}>{price}원</Price>
+        <Price>{price}원</Price>
       </InfoColumn>
     </Info>
   </Card>

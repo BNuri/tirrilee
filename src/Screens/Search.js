@@ -23,7 +23,9 @@ const Blue = styled.span`
 
 const ItemContainer = styled.div`
   display: grid;
-  grid-gap: 12pt;
+  grid-template-columns: repeat(auto-fill, 175.7pt);
+  justify-content: space-evenly;
+  grid-gap: 12pt 5pt;
 `;
 
 export default () => {

@@ -36,13 +36,13 @@ const TapContainer = styled.section`
   padding-bottom: 28pt;
 `;
 
-const Taps = styled.div`
+const Taps = styled.ul`
   height: 27pt;
   width: 100%;
   border-bottom: 1px solid ${(props) => props.theme.button_lightgrey};
 `;
 
-const Tap = styled.span`
+const Tap = styled.li`
   display: table-cell;
   height: 27pt;
   width: 50pt;
@@ -62,7 +62,7 @@ const CardContainer = styled.div`
   display: grid;
   grid-template-columns: repeat(auto-fill, 85pt);
   justify-content: space-evenly;
-  row-gap: 12pt;
+  grid-gap: 12pt 5pt;
 `;
 
 export default () => {

@@ -53,6 +53,7 @@ const Title = styled.td`
 const GridSContainer = styled.div`
   display: grid;
   grid-template-columns: repeat(auto-fill, 85pt);
+  justify-content: space-evenly;
   grid-gap: 12pt 5pt;
 `;
 
