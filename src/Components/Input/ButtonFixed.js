@@ -9,6 +9,7 @@ const Button = styled.button`
   font-size: 7pt;
   font-weight: 500;
   line-height: 11.5pt;
+  border: none;
   background-color: ${(props) =>
     props.colored ? props.theme.main_blue : props.theme.button_lightgrey};
   position: fixed;
