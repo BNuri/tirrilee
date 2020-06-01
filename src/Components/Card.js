@@ -6,7 +6,7 @@ import star from "../assets/images/icons/star_fill.png";
 const Card = styled.section`
   height: ${(props) =>
     props.size === 75 ? "118.5pt" : props.size === 50 ? "106.5pt" : "138.5pt"};
-  min-width: ${(props) =>
+  width: ${(props) =>
     props.size === 75 ? "144.5pt" : props.size === 50 ? "85pt" : "175.7pt"};
   position: relative;
   border-radius: 2pt;
