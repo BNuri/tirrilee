@@ -6,7 +6,7 @@ import star from "../assets/images/icons/star_fill.png";
 const Card = styled.section`
   height: ${(props) =>
     props.size === 75 ? "118.5pt" : props.size === 50 ? "106.5pt" : "138.5pt"};
-  width: ${(props) =>
+  min-width: ${(props) =>
     props.size === 75 ? "144.5pt" : props.size === 50 ? "85pt" : "175.7pt"};
   position: relative;
   border-radius: 2pt;
@@ -22,11 +22,13 @@ const Like = styled.img`
   z-index: 1;
 `;
 
-const Img = styled.img`
-  max-height: ${(props) =>
+const Img = styled.div`
+  height: ${(props) =>
     props.size === 75 ? "82.5pt" : props.size === 50 ? "60pt" : "100pt"};
   width: 100%;
-  height: auto;
+  background-image: url(${(props) => props.src});
+  background-size: cover;
+  background-position: center;
   position: absolute;
   top: 0;
   left: 0;
