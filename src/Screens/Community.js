@@ -65,11 +65,6 @@ const CardContainer = styled.div`
   row-gap: 12pt;
 `;
 
-const ButtonCenterContainer = styled.div`
-  position: absolute;
-  bottom: 40pt;
-`;
-
 export default () => {
   const [tab, setTab] = useState(1);
   const [result, setResult] = useState([]);
@@ -108,9 +103,8 @@ export default () => {
               <Card key={item.id} size={50} {...item} />
             ))}
           </CardContainer>
-          <ButtonCenter name="글 작성하기" to={"/main"} />
+          <ButtonCenter name="글 작성하기" to={"/community/write"} />
         </TapContainer>
-        <ButtonCenterContainer></ButtonCenterContainer>
       </Main>
       <Navigation />
     </Container>
