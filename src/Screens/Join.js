@@ -4,7 +4,9 @@ import Header from "../Components/Nav/Header";
 import Text from "../Components/Input/Text";
 import ButtonFixed from "../Components/Input/ButtonFixed";
 
-const Container = styled.main`
+const Container = styled.div``;
+
+const Main = styled.main`
   display: flex;
   flex-direction: column;
   justify-content: space-evenly;
@@ -49,58 +51,60 @@ export default () => {
   const handleSubmit = () => {};
 
   return (
-    <Container className="withHeaderBottomButton">
+    <Container>
       <Header title="회원가입" />
-      <SubTitle>가입 정보를 입력해주세요:)</SubTitle>
-      <InputContainer>
-        <Label htmlFor="email">이메일</Label>
-        <Text
-          type="text"
-          placeholder="이메일을 입력해주세요."
-          value={form.email}
-          name="email"
-          onChange={updateValue}
-          id="email"
+      <Main className="withHeaderBottomButton">
+        <SubTitle>가입 정보를 입력해주세요:)</SubTitle>
+        <InputContainer>
+          <Label htmlFor="email">이메일</Label>
+          <Text
+            type="text"
+            placeholder="이메일을 입력해주세요."
+            value={form.email}
+            name="email"
+            onChange={updateValue}
+            id="email"
+          />
+        </InputContainer>
+        <InputContainer>
+          <Label htmlFor="password">비밀번호</Label>
+          <Text
+            type="password"
+            placeholder="숫자,영문,특수문자 포함 12자"
+            value={form.password}
+            name="password"
+            onChange={updateValue}
+            id="password"
+          />
+        </InputContainer>
+        <InputContainer>
+          <Label htmlFor="nickname">닉네임</Label>
+          <Text
+            type="text"
+            placeholder="티릴리에서 사용할 닉네임을 입력해주세요."
+            value={form.nickname}
+            name="nickname"
+            onChange={updateValue}
+            id="nickname"
+          />
+        </InputContainer>
+        <InputContainer>
+          <Label htmlFor="phone">연락처</Label>
+          <Text
+            type="number"
+            placeholder='"-"제외, 숫자만 입력해주세요.'
+            value={form.phone}
+            name="phone"
+            onChange={updateValue}
+            id="phone"
+          />
+        </InputContainer>
+        <ButtonFixed
+          name="가입완료"
+          colored={formFilled}
+          onClick={handleSubmit}
         />
-      </InputContainer>
-      <InputContainer>
-        <Label htmlFor="password">비밀번호</Label>
-        <Text
-          type="password"
-          placeholder="숫자,영문,특수문자 포함 12자"
-          value={form.password}
-          name="password"
-          onChange={updateValue}
-          id="password"
-        />
-      </InputContainer>
-      <InputContainer>
-        <Label htmlFor="nickname">닉네임</Label>
-        <Text
-          type="text"
-          placeholder="티릴리에서 사용할 닉네임을 입력해주세요."
-          value={form.nickname}
-          name="nickname"
-          onChange={updateValue}
-          id="nickname"
-        />
-      </InputContainer>
-      <InputContainer>
-        <Label htmlFor="phone">연락처</Label>
-        <Text
-          type="number"
-          placeholder='"-"제외, 숫자만 입력해주세요.'
-          value={form.phone}
-          name="phone"
-          onChange={updateValue}
-          id="phone"
-        />
-      </InputContainer>
-      <ButtonFixed
-        name="가입완료"
-        colored={formFilled}
-        onClick={handleSubmit}
-      />
+      </Main>
     </Container>
   );
 };
