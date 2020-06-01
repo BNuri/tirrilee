@@ -54,9 +54,10 @@ export const items = [
 export const user = {
   name: "이티릴",
   email: "tirrilee@gmail.com",
-  description: "안녕하세요. 이티릴입니다. 소개내용이 들어갑니다.",
+  description: `안녕하세요. 이티릴입니다. 
+  소개내용이 들어갑니다.`,
   profilePath:
-    "https://lh3.googleusercontent.com/proxy/ezv7iA4-yUKNJ85curxAKLpepyzyHvp__aiwFwshdy7wPST_ga2i7r2Vu_lIlegjhntdjCGL4oijqMr0PTX3dGVzbX9BJEDgtVziDYIzJ5-qKoZ6-yXDMpYsZyG9kqei-AjLDwV1CmlDKp2fG0vkz94ZE9q79clQTThXEKd4KWxLpZHqy7Wgdk2oRQi_5suD",
+    "https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcR-yKMe8PXZn3heDgmAD-HRS087HqAqgskuUGmkUowtHYiu3niA&usqp=CAU",
   sellCnt: 100,
   buyCnt: 200,
   season: "봄",
