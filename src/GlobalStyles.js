@@ -6,7 +6,7 @@ const GlobalStyle = createGlobalStyle`
     *{
         box-sizing: border-box;
     }
-    html, body, #root, #app {
+    html, body, #root {
         height: 100%;
     }
     body {
@@ -39,7 +39,7 @@ const GlobalStyle = createGlobalStyle`
         }
         &.withHeaderNav {
             margin-top: 25pt;
-            margin-bottom: 30pt;
+            margin-bottom: 35pt;
         }
     }
 `;
