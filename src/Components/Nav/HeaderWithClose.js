@@ -14,6 +14,8 @@ const Header = styled.header`
   display: flex;
   justify-content: space-between;
   align-items: center;
+  background-color: ${(props) => props.theme.main_white};
+  z-index: 5;
 `;
 
 const Img = styled.img`

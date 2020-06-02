@@ -8,9 +8,15 @@ import img_upload_button from "../assets/images/icons/img_upload_button.png";
 import ItemContext from "../contexts/ItemContext";
 import { v4 as uuidv4 } from "uuid";
 
-const Container = styled.div``;
+const Container = styled.div`
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+`;
 
 const Main = styled.main`
+  max-height: 400pt;
   display: flex;
   flex-direction: column;
   justify-content: space-evenly;

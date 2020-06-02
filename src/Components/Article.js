@@ -12,12 +12,12 @@ const Article = styled.article`
   display: flex;
   flex-direction: column;
   justify-content: space-evenly;
+  color: ${(props) => props.theme.main_white};
 `;
 
 const Title = styled.h6`
   font-size: 16pt;
   font-weight: 700;
-  color: ${(props) => props.theme.main_white};
   line-height: 15pt;
 `;
 
