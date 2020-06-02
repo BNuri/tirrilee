@@ -4,9 +4,15 @@ import Header from "../Components/Nav/Header";
 import Text from "../Components/Input/Text";
 import ButtonFixed from "../Components/Input/ButtonFixed";
 
-const Container = styled.div``;
+const Container = styled.div`
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+`;
 
 const Main = styled.main`
+  min-height: 400pt;
   display: flex;
   flex-direction: column;
   justify-content: space-evenly;
@@ -53,7 +59,7 @@ export default () => {
   return (
     <Container>
       <Header title="회원가입" />
-      <Main className="withHeaderBottomButton">
+      <Main>
         <SubTitle>가입 정보를 입력해주세요:)</SubTitle>
         <InputContainer>
           <Label htmlFor="email">이메일</Label>

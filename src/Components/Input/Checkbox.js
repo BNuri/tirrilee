@@ -36,7 +36,7 @@ const Check = styled.span`
     content: "";
     position: absolute;
     display: none;
-    left: 2.5pt;
+    left: 3.5pt;
     top: 1.5pt;
     width: 2pt;
     height: 4.5pt;

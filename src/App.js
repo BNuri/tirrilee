@@ -8,7 +8,7 @@ import Router from "./Router";
 const App = styled.div``;
 
 export default () => (
-  <App>
+  <App id="app">
     <GlobalStyle />
     <ThemeProvider theme={theme}>
       <Router />

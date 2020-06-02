@@ -6,6 +6,9 @@ const GlobalStyle = createGlobalStyle`
     *{
         box-sizing: border-box;
     }
+    html, body, #root, #app {
+        height: 100%;
+    }
     body {
         font-family: 'Noto Sans KR', sans-serif;
     }
@@ -20,6 +23,10 @@ const GlobalStyle = createGlobalStyle`
             outline: none; 
         } 
     }
+    input {
+        -webkit-border-radius: 0;
+        -webkit-appearance: 0;
+    }
     main {
         padding: 0 6pt;
         &.noPadding {
@@ -28,7 +35,7 @@ const GlobalStyle = createGlobalStyle`
         &.withHeaderBottomButton {
             margin-top: 22pt;
             margin-bottom: 24pt;
-            height: calc(100vh - 46pt);
+            height: calc(100% - 46pt);
         }
         &.withHeaderNav {
             margin-top: 25pt;

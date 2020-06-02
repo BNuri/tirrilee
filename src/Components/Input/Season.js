@@ -21,7 +21,6 @@ const Season = styled.div`
 const Select = styled.button`
   padding: 0;
   color: inherit;
-  float: right;
   border: none;
   background-color: ${(props) => props.theme.main_white};
   &:focus {

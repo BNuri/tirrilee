@@ -7,7 +7,7 @@ import Button from "../Components/Input/Button";
 import tirrilee_logo from "../assets/images/tirrilee_logo.png";
 
 const Container = styled.main`
-  height: 100vh;
+  height: 100%;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -39,9 +39,7 @@ const A = styled(Link)`
 
 const TermContainer = styled.div`
   padding: 0 25pt;
-  position: absolute;
-  bottom: 12pt;
-  left: 0;
+  margin: 0 auto;
 `;
 
 const Term = styled.span`
