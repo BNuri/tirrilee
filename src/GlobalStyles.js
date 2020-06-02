@@ -25,7 +25,7 @@ const GlobalStyle = createGlobalStyle`
     }
     input {
         -webkit-border-radius: 0;
-        -webkit-appearance: 0;
+        -webkit-appearance: none;
     }
     main {
         padding: 0 6pt;
