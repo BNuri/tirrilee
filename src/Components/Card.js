@@ -24,6 +24,11 @@ const Card = styled.section`
     font-size: ${(props) =>
       props.size === 75 ? "8pt" : props.size === 50 ? "7pt" : "9pt"};
   }
+  h4 {
+    position: ${(props) => (props.size === 50 ? "absolute" : "")};
+    bottom: 5pt;
+    right: 5pt;
+  }
 `;
 
 const Like = styled.img`
@@ -102,23 +107,28 @@ const Price = styled.h4`
   font-weight: 700;
 `;
 
-export default ({ size, name, price, season, imgPath, rating, seller, id }) => (
-  <Card size={size}>
-    <Like src={heart_disabled} alt="좋아요" />
-    <Img src={imgPath} />
-    <Info>
-      <InfoColumn size={size}>
-        <Title>{name}</Title>
-        <MoreInfo>
-          <Span>{season}</Span>
-          <Star src={star} />
-          <Span>{rating}점</Span>
-        </MoreInfo>
-      </InfoColumn>
-      <InfoColumn size={size}>
-        <Span>{seller}</Span>
-        <Price>{price}원</Price>
-      </InfoColumn>
-    </Info>
-  </Card>
-);
+export default ({ size, name, price, season, imgPath, rating, seller, id }) => {
+  const addComma = (num) => {
+    return num.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
+  };
+  return (
+    <Card size={size}>
+      <Like src={heart_disabled} alt="좋아요" />
+      <Img src={imgPath} />
+      <Info>
+        <InfoColumn size={size}>
+          <Title>{name}</Title>
+          <MoreInfo>
+            <Span>{season}</Span>
+            <Star src={star} />
+            <Span>{rating}점</Span>
+          </MoreInfo>
+        </InfoColumn>
+        <InfoColumn size={size}>
+          <Span>{seller}</Span>
+          <Price>{addComma(price)}원</Price>
+        </InfoColumn>
+      </Info>
+    </Card>
+  );
+};
