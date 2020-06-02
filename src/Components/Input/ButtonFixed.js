@@ -17,4 +17,4 @@ const Button = styled.button`
   left: 0;
 `;
 
-export default ({ name, colored }) => <Button colored={colored}>{name}</Button>;
+export default (props) => <Button {...props}>{props.name}</Button>;

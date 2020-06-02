@@ -1,8 +1,8 @@
-import React, { useState } from "react";
+import React, { useState, useContext } from "react";
 import styled from "styled-components";
 import Header from "../Components/Nav/HeaderWithComplete";
 import Navigation from "../Components/Nav/Navigation";
-import { user } from "../data";
+import UserContext from "../contexts/UserContext";
 
 const Container = styled.div``;
 
@@ -61,7 +61,8 @@ const Input = styled.input`
   color: ${(props) => props.theme.text_grey};
 `;
 
-export default () => {
+export default ({ history }) => {
+  const { user, editUser } = useContext(UserContext);
   const [form, setForm] = useState(user);
   const updateValue = (e) => {
     setForm({
@@ -86,7 +87,10 @@ export default () => {
     };
     reader.readAsDataURL(file);
   };
-  const handleSubmit = () => {};
+  const handleSubmit = () => {
+    editUser(form);
+    history.push("/mypage");
+  };
 
   return (
     <Container>

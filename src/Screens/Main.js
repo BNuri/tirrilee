@@ -1,11 +1,12 @@
-import React from "react";
+import React, { useContext } from "react";
 import styled from "styled-components";
 import HeaderNoTitle from "../Components/Nav/HeaderNoTitle";
 import Navigation from "../Components/Nav/Navigation";
-import { article1, items } from "../data";
+import { article1 } from "../data";
 import Article from "../Components/Article";
 import Section from "../Components/Section";
 import Card from "../Components/Card";
+import ItemContext from "../contexts/ItemContext";
 
 const Container = styled.div``;
 
@@ -57,38 +58,41 @@ const GridSContainer = styled.div`
   grid-gap: 12pt 5pt;
 `;
 
-export default () => (
-  <Container>
-    <HeaderNoTitle />
-    <Main className="noPadding withHeaderNav">
-      <Article {...article1} />
-      <Section title="카드M_Section" moreLink="/main">
-        <GridMContainer>
-          {items.map((item) => (
-            <Card key={item.id + "m"} size={75} {...item} />
-          ))}
-        </GridMContainer>
-      </Section>
-      <Section title="게시판_Section" moreLink="/main">
-        <TableContainer>
-          <tbody>
+export default () => {
+  const { items } = useContext(ItemContext);
+  return (
+    <Container>
+      <HeaderNoTitle />
+      <Main className="noPadding withHeaderNav">
+        <Article {...article1} />
+        <Section title="카드M_Section" moreLink="/main">
+          <GridMContainer>
             {items.map((item) => (
-              <Tr key={item.id + "t"}>
-                <Category>{item.season}</Category>
-                <Title>{item.name}</Title>
-              </Tr>
+              <Card key={item.id + "m"} size={75} {...item} />
             ))}
-          </tbody>
-        </TableContainer>
-      </Section>
-      <Section title="카드S_Section" moreLink="/main">
-        <GridSContainer>
-          {items.map((item) => (
-            <Card key={item.id} size={50} {...item} />
-          ))}
-        </GridSContainer>
-      </Section>
-    </Main>
-    <Navigation />
-  </Container>
-);
+          </GridMContainer>
+        </Section>
+        <Section title="게시판_Section" moreLink="/main">
+          <TableContainer>
+            <tbody>
+              {items.map((item) => (
+                <Tr key={item.id + "t"}>
+                  <Category>{item.season}</Category>
+                  <Title>{item.name}</Title>
+                </Tr>
+              ))}
+            </tbody>
+          </TableContainer>
+        </Section>
+        <Section title="카드S_Section" moreLink="/main">
+          <GridSContainer>
+            {items.map((item) => (
+              <Card key={item.id} size={50} {...item} />
+            ))}
+          </GridSContainer>
+        </Section>
+      </Main>
+      <Navigation />
+    </Container>
+  );
+};

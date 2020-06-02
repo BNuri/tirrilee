@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useContext } from "react";
 import styled from "styled-components";
 import Header from "../Components/Nav/Header";
 import Article from "../Components/Article";
@@ -6,7 +6,8 @@ import Navigation from "../Components/Nav/Navigation";
 import ButtonRound from "../Components/Input/ButtonRound";
 import Card from "../Components/Card";
 import ButtonCenter from "../Components/Input/ButtonCenter";
-import { roundButtons, items, article2 } from "../data";
+import { roundButtons, article2 } from "../data";
+import ItemContext from "../contexts/ItemContext";
 
 const Container = styled.div``;
 
@@ -66,6 +67,7 @@ const CardContainer = styled.div`
 `;
 
 export default () => {
+  const { items } = useContext(ItemContext);
   const [tab, setTab] = useState(1);
   const [result, setResult] = useState([]);
   const updateTap = (e) => {

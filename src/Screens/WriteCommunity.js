@@ -1,10 +1,12 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useContext } from "react";
 import styled from "styled-components";
 import Header from "../Components/Nav/HeaderWithClose";
 import Text from "../Components/Input/Text";
 import SeasonRound from "../Components/Input/SeasonRound";
 import ButtonFixed from "../Components/Input/ButtonFixed";
 import img_upload_button from "../assets/images/icons/img_upload_button.png";
+import ItemContext from "../contexts/ItemContext";
+import { v4 as uuidv4 } from "uuid";
 
 const Container = styled.div``;
 
@@ -63,13 +65,15 @@ const Img = styled.div`
   background-position: center;
 `;
 
-export default () => {
+export default ({ history }) => {
+  const { items, addItem } = useContext(ItemContext);
   const [form, setForm] = useState({
     name: "",
     price: "",
     season: "봄",
     file: "",
     imgPath: "",
+    id: uuidv4(),
   });
   const [formFilled, setFormFilled] = useState(false);
   const updateValue = (e) => {
@@ -108,7 +112,10 @@ export default () => {
       setFormFilled(true);
     }
   }, [form]);
-  const handleSubmit = () => {};
+  const handleSubmit = () => {
+    addItem(form);
+    history.push("/community");
+  };
 
   return (
     <Container>

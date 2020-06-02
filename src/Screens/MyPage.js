@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useContext } from "react";
 import styled from "styled-components";
 import { Link } from "react-router-dom";
 import Header from "../Components/Nav/Header";
@@ -8,7 +8,7 @@ import like_icon from "../assets/images/icons/like_icon.png";
 import writing_icon from "../assets/images/icons/writing_icon.png";
 import cart_icon from "../assets/images/icons/cart_icon.png";
 import chevron_right_gray from "../assets/images/icons/chevron_right_gray.png";
-import { user } from "../data";
+import UserContext from "../contexts/UserContext";
 
 const Container = styled.div``;
 
@@ -109,55 +109,58 @@ const IconS = styled.img`
   right: 6pt;
 `;
 
-export default () => (
-  <Container>
-    <Header title="마이 페이지" onlyTitle={true} />
-    <Main className="noPadding withHeaderNav">
-      <MyContainer>
-        <Profile>
-          <ProfileImg imgPath={user.profilePath} />
-          <ProfileInfo>
-            <Name>{user.name}</Name>
-            <Desc>{user.description}</Desc>
-          </ProfileInfo>
-          <Link to="/mypage/edit">
-            <IconS src={edit_icon} />
-          </Link>
-        </Profile>
+export default () => {
+  const { user } = useContext(UserContext);
+  return (
+    <Container>
+      <Header title="마이 페이지" onlyTitle={true} />
+      <Main className="noPadding withHeaderNav">
+        <MyContainer>
+          <Profile>
+            <ProfileImg imgPath={user.profilePath} />
+            <ProfileInfo>
+              <Name>{user.name}</Name>
+              <Desc>{user.description}</Desc>
+            </ProfileInfo>
+            <Link to="/mypage/edit">
+              <IconS src={edit_icon} />
+            </Link>
+          </Profile>
 
-        <MyUl>
-          <MyLi>
-            <span>구매</span>
-            <span>{user.sellCnt}</span>
-          </MyLi>
-          <MyLi>
-            <span>판매</span>
-            <span>{user.buyCnt}</span>
-          </MyLi>
-          <MyLi>
-            <span>성향</span>
-            <span>{user.season}</span>
-          </MyLi>
-        </MyUl>
-      </MyContainer>
-      <ConfigContainer>
-        <Config>
-          <IconM src={like_icon} />
-          <span>좋아요 목록</span>
-          <IconS src={chevron_right_gray} />
-        </Config>
-        <Config>
-          <IconM src={writing_icon} />
-          <span>내가 작성한 글</span>
-          <IconS src={chevron_right_gray} />
-        </Config>
-        <Config>
-          <IconM src={cart_icon} />
-          <span>주문배송조회</span>
-          <IconS src={chevron_right_gray} />
-        </Config>
-      </ConfigContainer>
-    </Main>
-    <Navigation />
-  </Container>
-);
+          <MyUl>
+            <MyLi>
+              <span>구매</span>
+              <span>{user.sellCnt}</span>
+            </MyLi>
+            <MyLi>
+              <span>판매</span>
+              <span>{user.buyCnt}</span>
+            </MyLi>
+            <MyLi>
+              <span>성향</span>
+              <span>{user.season}</span>
+            </MyLi>
+          </MyUl>
+        </MyContainer>
+        <ConfigContainer>
+          <Config>
+            <IconM src={like_icon} />
+            <span>좋아요 목록</span>
+            <IconS src={chevron_right_gray} />
+          </Config>
+          <Config>
+            <IconM src={writing_icon} />
+            <span>내가 작성한 글</span>
+            <IconS src={chevron_right_gray} />
+          </Config>
+          <Config>
+            <IconM src={cart_icon} />
+            <span>주문배송조회</span>
+            <IconS src={chevron_right_gray} />
+          </Config>
+        </ConfigContainer>
+      </Main>
+      <Navigation />
+    </Container>
+  );
+};

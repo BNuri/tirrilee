@@ -1,10 +1,10 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useContext } from "react";
 import styled from "styled-components";
 import Header from "../Components/Nav/Header";
 import SearchInput from "../Components/Input/SearchInput";
 import Card from "../Components/Card";
-import { items } from "../data";
 import Navigation from "../Components/Nav/Navigation";
+import ItemContext from "../contexts/ItemContext";
 
 const Container = styled.div``;
 
@@ -29,6 +29,7 @@ const ItemContainer = styled.div`
 `;
 
 export default () => {
+  const { items } = useContext(ItemContext);
   const [form, setForm] = useState({
     text: "",
     season: "",

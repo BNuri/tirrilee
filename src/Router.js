@@ -9,7 +9,6 @@ import Login from "./Screens/Login";
 import Join from "./Screens/Join";
 import Main from "./Screens/Main";
 import Search from "./Screens/Search";
-import Upload from "./Screens/Upload";
 import Community from "./Screens/Community";
 import WriteCommunity from "./Screens/WriteCommunity";
 import MyPage from "./Screens/MyPage";
@@ -22,7 +21,6 @@ export default () => (
       <Route path="/join" exact component={Join} />
       <Route path="/main" exact component={Main} />
       <Route path="/search" exact component={Search} />
-      <Route path="/upload" exact component={Upload} />
       <Route path="/community" exact component={Community} />
       <Route path="/community/write" exact component={WriteCommunity} />
       <Route path="/mypage" exact component={MyPage} />
